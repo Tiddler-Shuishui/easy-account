@@ -1,27 +1,13 @@
 <template>
-  <div class="nav-wrapper">
-  <div class="content">
-    Money
-  </div>
-    <Nav/>
-  </div>
+  <Layout>
+    <p>Money</p>
+  </Layout>
 </template>
 
 <script lang="ts">
-  export default {
-    name:'Money',
-  }
+export default {
+  name: 'Money',
+}
 </script>
 
-<style lang="scss" scoped>
-.nav-wrapper {
-border:1px solid green;
-display: flex;
-flex-direction: column;
-height: 100vh;
-}
-.content{
-  overflow: auto;
-  flex-grow: 1;
-}
-</style>
+<style lang="scss" scoped></style>
