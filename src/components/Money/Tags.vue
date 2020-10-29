@@ -45,6 +45,7 @@ export default class Tags extends Vue {
 
 <style lang="scss" scoped>
 .tags {
+  background: white;
   flex-grow: 1;
   display: flex;
   flex-direction: column-reverse;
