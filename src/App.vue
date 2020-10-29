@@ -16,5 +16,7 @@ body {
   font-size:16px;
   line-height: 1.5;
   background: #F5F5F5;
+  max-width: 375px;
+  margin: auto;
 }
 </style>
