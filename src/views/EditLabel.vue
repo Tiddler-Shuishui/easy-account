@@ -53,7 +53,9 @@ export default class EditLabel extends Vue {
 
   remove() {
     if (this.tag) {
-      tagListModel.update(this.tag.id, name);
+      if(tagListModel.update(this.tag.id, name)){
+        this.$router.back()
+      }
     }
   }
   goBack(){
