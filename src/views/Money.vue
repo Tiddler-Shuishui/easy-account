@@ -20,10 +20,8 @@ import FormItem from '@/components/Money/FormItem.vue';
 import Tags from '@/components/Money/Tags.vue';
 import {Component, Watch} from 'vue-property-decorator';
 import recordListModel from '@/models/recordListModel';
-import tagListModel from '@/models/tagListModel';
 
 const recordList = recordListModel.fetch();
-const tagList = tagListModel.fetch();
 
 const version: string = window.localStorage.getItem('version') || '0';
 // const recordList: Record[] = JSON.parse(window.localStorage.getItem('recordList')||'[]');
@@ -42,7 +40,7 @@ window.localStorage.setItem('version','0.0.2')
   components: {Tags, FormItem, Types, NumberPad}
 })
 export default class Money extends Vue {
-  tags = tagList;
+  tags = window.tagList;
   record: RecordItem = {tags: [], notes: '', type: '-', amount: 0};
   recordList: RecordItem[] = recordList;
 
