@@ -5,5 +5,4 @@ const store = {
   ...recordStore,
   ...tagStore
 };
-
 export default store;
