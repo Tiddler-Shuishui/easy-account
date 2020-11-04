@@ -21,20 +21,7 @@ import Tags from '@/components/Money/Tags.vue';
 import {Component, Watch} from 'vue-property-decorator';
 import recordListModel from '@/models/recordListModel';
 
-const recordList = recordListModel.fetch();
-
-const version: string = window.localStorage.getItem('version') || '0';
-// const recordList: Record[] = JSON.parse(window.localStorage.getItem('recordList')||'[]');
-if (version === '0.0.1'){
-  // 数据库升级，数据迁移
-  recordList.forEach(record =>{
-    record.createdAt = new Date(2020,0,1);
-  });
-  //保存数据
-  window.localStorage.setItem('recordList',JSON.stringify(recordList));
-}
-window.localStorage.setItem('version','0.0.2')
-
+const recordList = recordListModel.data;
 
 @Component({
   components: {Tags, FormItem, Types, NumberPad}
