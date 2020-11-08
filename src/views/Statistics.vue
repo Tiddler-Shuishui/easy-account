@@ -6,18 +6,22 @@
 </template>
 
 <style scoped lang="scss">
-::v-deep .type-tabs-item {
-  background: white;
+::v-deep {
+  .type-tabs-item {
+    background: white;
 
-  &.selected {
-    background: #c4c4c4;
+    &.selected {
+      background: #c4c4c4;
 
-    &::after {
-      display: none;
+      &::after {
+        display: none;
+      }
     }
   }
+  .interval-tabs-item {
+    height: 48px;
+  }
 }
-
 </style>
 
 <script lang="ts">
