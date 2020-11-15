@@ -1,9 +1,9 @@
 <template>
   <Layout>
     <Tabs class-prefix="type" :data-source="recordTypeList" :value.sync="type"/>
-    <ol v-if="groupList.length>0">
+    <ol v-if="groupList.length>0" class="group">
       <li v-for="(group,index) in groupList" :key="index">
-        <ol>
+        <ol class="groupItem">
           <h3 class="title">{{ beautify(group.title) }} <span>￥{{group.total}}</span> </h3>
           <li class="record" v-for="item in group.items" :key="item.id">
             <span>{{ tagString(item.tags) }}</span>
@@ -88,6 +88,7 @@ export default class Statistics extends Vue {
 }
 </script>
 <style scoped lang="scss">
+@import "~@/assets/style/helper.scss";
 .noResult{
   padding: 16px;
   text-align: center;
@@ -116,20 +117,38 @@ export default class Statistics extends Vue {
   display: flex;
   justify-content: space-between;
   align-content: center;
+
+}
+.group{
+  border-radius: 8px;
+  padding: 8px;
+  .groupItem{
+    margin-bottom: 8px ;
+    li:last-child{
+      border-radius: 0 0 8px 8px;
+    }
+
+
+    background: rgb(251,251,251);
+    border-radius: 8px;
+    .title {
+      @extend %item;
+      border-radius: 8px 8px 0 0;
+    }
+
+    .record {
+      @extend %item;
+      background: white;
+      padding: 8px;
+    }
+
+    .notes {
+      margin-right: auto;
+      margin-left: 16px;
+      color: #999;
+    }
+  }
 }
 
-.title {
-  @extend %item;
-}
 
-.record {
-  @extend %item;
-  background: white;
-}
-
-.notes {
-  margin-right: auto;
-  margin-left: 16px;
-  color: #999;
-}
 </style>
